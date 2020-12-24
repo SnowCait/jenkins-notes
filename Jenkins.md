@@ -1,5 +1,8 @@
 # Jenkins
 
+## General
+- [Administering Jenkins - 日本語 - Jenkins Wiki](https://wiki.jenkins.io/display/JA/Administering+Jenkins)
+
 ## Bash
 - [Jenkinsで使うシェルスクリプトは-xeつけた方がよかった - くりにっき](https://sue445.hatenablog.com/entry/2014/05/23/143737)
 
