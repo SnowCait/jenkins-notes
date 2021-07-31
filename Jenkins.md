@@ -15,6 +15,7 @@
 - [[JENKINS-47986] Pipeline: Add trim option to String Parameter - Jenkins JIRA](https://issues.jenkins-ci.org/browse/JENKINS-47986)
 - [Jenkinsのpipelineのスクリプトの書き方まとめ - ぴよぴよ.py](https://cocodrips.hateblo.jp/entry/2017/10/23/205801)
 - [Jenkins Decrarative Pipelineで stage を配列定義 - Qiita](https://qiita.com/98lerr/items/3051f824a1085c36b109)
+- [Trigger multi Jenkins jobs in parallel – Pipeline project | DevOps QA](https://devopsqa.wordpress.com/2018/11/24/trigger-multi-jenkins-jobs-in-parallel-pipeline-project/)
 
 ## Scripted Pipeline
 - [jenkinsのpipeline入門(jenkinsfile) - SIerだけど技術やりたいブログ](https://www.kimullaa.com/entry/2017/01/31/002055)
