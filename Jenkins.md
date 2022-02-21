@@ -4,6 +4,10 @@
 - [Administering Jenkins - 日本語 - Jenkins Wiki](https://wiki.jenkins.io/display/JA/Administering+Jenkins)
 - [Jenkinsfile を書く前に知っておくべきこと (機能制約編) - あらしおブログ](https://arasio.hatenablog.com/entry/2016/10/08/220843)
 
+### Parallel
+
+- [groovy - Dynamic Parallel stages in Jenkins Pipeline outside 'script' block - Stack Overflow](https://stackoverflow.com/questions/53234490/dynamic-parallel-stages-in-jenkins-pipeline-outside-script-block)
+
 ## Bash
 - [Jenkinsで使うシェルスクリプトは-xeつけた方がよかった - くりにっき](https://sue445.hatenablog.com/entry/2014/05/23/143737)
 
