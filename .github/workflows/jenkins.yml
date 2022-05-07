@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - .github/workflows/jenkins.yml
-      - composer.yaml
+      - compose.yaml
       - Dockerfile
       - jenkins_home/**
   workflow_dispatch:
