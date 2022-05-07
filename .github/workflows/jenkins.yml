@@ -33,4 +33,4 @@ jobs:
         id: crumb
       - run: curl -X POST -H "${crumb_header}" http://localhost:8080/job/job-1/build
         env:
-          crumb_header: '${{ fromJSON(steps.crumb.outputs.json).crumbRequestField }}: ${{ fromJSON(steps.crumb.outputs.json).crumb }}'
+          crumb_header: '${{ fromJSON(steps.crumb.outputs.json).crumbRequestField }}:${{ fromJSON(steps.crumb.outputs.json).crumb }}'
