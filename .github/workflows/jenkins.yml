@@ -25,9 +25,9 @@ jobs:
           echo $OWNER
       - run: docker compose run --rm jenkins --version
       - run: curl http://localhost:8080/
-      - run: curl -s -c cookie http://localhost:8080/crumbIssuer/api/json
+      - run: curl -s http://localhost:8080/crumbIssuer/api/json
       - run: |
-          crumb=$(curl -s http://localhost:8080/crumbIssuer/api/json)
+          crumb=$(curl -s -c cookie http://localhost:8080/crumbIssuer/api/json)
           echo $crumb
           echo "::set-output name=json::${crumb}"
         id: crumb
