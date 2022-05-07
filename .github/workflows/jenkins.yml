@@ -24,7 +24,7 @@ jobs:
           OWNER=$(id --user):$(id --group)
           echo $OWNER
       - run: sleep 30s
-      - run: docker compose run --rm jenkins ls -la /var/jenkins_home/
+      - run: docker compose run --rm -u 0 jenkins ls -la /var/jenkins_home/
       - run: docker compose run --rm jenkins --version
       - name: Wait for starting
         run: |
