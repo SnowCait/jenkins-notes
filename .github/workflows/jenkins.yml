@@ -17,11 +17,11 @@ jobs:
     steps:
       - run: docker compose version
       - uses: actions/checkout@v3
-      - run: docker compose up -d jenkins-plain
+      - run: docker compose up -d jenkins
       - name: Wait for starting
         run: |
           set -x
-          until [ "$(docker inspect --format='{{.State.Health.Status}}' $(docker compose ps -q jenkins-plain))" = 'healthy' ]; do
+          until [ "$(docker inspect --format='{{.State.Health.Status}}' $(docker compose ps -q jenkins))" = 'healthy' ]; do
             docker compose exec jenkins-plain ls -la /var/jenkins_home/
             sleep 5s
           done
