@@ -22,7 +22,6 @@ jobs:
         run: |
           set -x
           until [ "$(docker inspect --format='{{.State.Health.Status}}' $(docker compose ps -q jenkins))" = 'healthy' ]; do
-            docker compose exec jenkins ls -la /var/jenkins_home/plugins/
             sleep 5s
           done
       - run: curl http://localhost:8080/
