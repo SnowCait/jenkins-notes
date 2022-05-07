@@ -1,2 +1,5 @@
 /jenkins_home/*
 !/jenkins_home/init.groovy.d/
+!/jenkins_home/jobs/
+/jenkins_home/jobs/*/*
+!/jenkins_home/jobs/*/config.xml
