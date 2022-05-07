@@ -9,10 +9,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 15
 
     steps:
+      - run: docker compose version
       - uses: actions/checkout@v3
-      - run: docker compose up -d --wait jenkins
+      - run: docker compose up -d --wait
       - run: curl http://localhost:8080/
       - run: curl -X POST http://localhost:8080/job/job-1/build
