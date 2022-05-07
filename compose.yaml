@@ -3,7 +3,7 @@ services:
     build:
       context: .
       args:
-        version: lts-jdk11
+        version: 2.319.3-lts-jdk11
     ports:
       - 8080:8080
       - 50000:50000
