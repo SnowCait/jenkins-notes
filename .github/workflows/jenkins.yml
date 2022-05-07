@@ -18,10 +18,13 @@ jobs:
       - run: docker compose version
       - uses: actions/checkout@v3
       - run: docker compose up -d jenkins
+      - run: docker compose run --rm jenkins --version
+      - run: sleep 30s
       - name: Wait for starting
         run: |
           set -x
           until [ "$(docker inspect --format='{{.State.Health.Status}}' $(docker compose ps -q jenkins))" = 'healthy' ]; do
+            docker compose exec jenkins ls -la /var/jenkins_home/plugins/
             sleep 5s
           done
       - run: curl http://localhost:8080/
