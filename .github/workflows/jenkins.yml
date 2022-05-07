@@ -17,21 +17,13 @@ jobs:
     steps:
       - run: docker compose version
       - uses: actions/checkout@v3
-      - run: docker compose up -d jenkins
-      - run: ls -la
+      - run: docker compose up -d --wait -u root jenkins
       - run: ls -la jenkins_home/
       - run: |
           OWNER=$(id --user):$(id --group)
           echo $OWNER
-      - run: sleep 30s
-      - run: docker compose run --rm jenkins-plain ls -la /var/jenkins_home/
+      - run: docker compose run --rm jenkins-plain id --user
+      - run: docker compose run --rm jenkins-plain id --group
       - run: docker compose run --rm -u root jenkins --version
-      - name: Wait for starting
-        run: |
-          set -x
-          until [ "$(docker inspect --format='{{.State.Health.Status}}' $(docker compose ps -q jenkins))" = 'healthy' ]; do
-            docker compose exec jenkins ls -la /var/jenkins_home/plugins/
-            sleep 5s
-          done
       - run: curl http://localhost:8080/
       - run: curl -X POST http://localhost:8080/job/job-1/build
