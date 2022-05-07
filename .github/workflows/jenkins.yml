@@ -36,9 +36,9 @@ jobs:
           crumb_header: '${{ fromJSON(steps.crumb.outputs.json).crumbRequestField }}:${{ fromJSON(steps.crumb.outputs.json).crumb }}'
       - run: |
           set -x
-          sleep 5s
+          sleep 10s
           start=0
-          while [ $(curl -sS -H "${crumb_header}" -b cookie http://localhost:8080/job/job-1/2/api/json | jq '.building') = "true" ]; do
+          while [ $(curl -sS -H "${crumb_header}" -b cookie http://localhost:8080/job/job-1/1/api/json | jq '.building') = "true" ]; do
             text=$(curl -sS -H "${crumb_header}" -b cookie "http://localhost:8080/job/job-1/1/logText/progressiveText?start=${start}")
             echo $text
             echo "text length: ${#text}"
