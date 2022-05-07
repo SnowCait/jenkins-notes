@@ -4,6 +4,9 @@ on:
   push:
     paths:
       - .github/workflows/jenkins.yml
+      - composer.yaml
+      - Dockerfile
+      - jenkins_home/**
   workflow_dispatch:
 
 jobs:
@@ -19,6 +22,7 @@ jobs:
         run: |
           set -x
           until [ "$(docker inspect --format='{{.State.Health.Status}}' $(docker compose ps -q jenkins-plain))" = 'healthy' ]; do
+            docker compose exec jenkins-plain ls -la /var/jenkins_home/
             sleep 5s
           done
       - run: curl http://localhost:8080/
