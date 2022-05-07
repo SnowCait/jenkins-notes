@@ -20,6 +20,9 @@ jobs:
       - run: docker compose up -d jenkins
       - run: ls -la
       - run: ls -la jenkins_home/
+      - run: |
+          OWNER=$(id --user):$(id --group)
+          echo $OWNER
       - run: sleep 30s
       - run: docker compose exec jenkins ls -la /var/jenkins_home/
       - run: docker compose run --rm jenkins --version
