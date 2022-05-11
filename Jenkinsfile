@@ -8,14 +8,14 @@ pipeline {
     }
     
     parameters {
-        string(name: 'PR_NUMBER', defaultValue: '0', description: '', trim: true)
+        string(name: 'pr_number', defaultValue: '0', description: '', trim: true)
     }
 
     stages {
         stage('stage 1') {
             steps {
                 echo 'stage 1'
-                echo "PR: ${params.PR_NUMBER}"
+                echo "PR: ${params.pr_number}"
                 sh 'pwd'
                 sh 'ls -la'
             }
