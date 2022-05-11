@@ -13,13 +13,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      JENKINS_HOME: ./jenkins_home
 
     steps:
       - run: docker compose version
       - uses: actions/checkout@v3
-      - run: sudo chown -R 1000:1000 jenkins_home/
+      - run: sudo chown -R 1000:1000 $JENKINS_HOME
       - run: docker compose up -d --wait jenkins
-      - run: ls -la jenkins_home/
+      - run: ls -la $JENKINS_HOME
       - run: |
           OWNER=$(id --user):$(id --group)
           echo $OWNER

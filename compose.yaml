@@ -8,7 +8,7 @@ services:
       - 8080:8080
       - 50000:50000
     volumes:
-      - ./jenkins_home:/var/jenkins_home
+      - ${JENKINS_HOME}:/var/jenkins_home
     privileged: true
     environment:
       - JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
@@ -18,8 +18,8 @@ services:
       test: ["CMD", "curl", "-f", "http://localhost:8080"]
       interval: 10s
       timeout: 5s
-      retries: 5
-      start_period: 30s
+      retries: 10
+      start_period: 3m
   jenkins-plain:
     image: jenkins/jenkins:lts-jdk11
     ports:
