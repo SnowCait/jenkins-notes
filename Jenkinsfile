@@ -1,11 +1,16 @@
 pipeline {
     agent any
+    
+    options {
+		timestamps()
+		timeout(time: 5, unit: 'MINUTES')
+		buildDiscarder(logRotator(daysToKeepStr: '7', artifactDaysToKeepStr: '7'))
+    }
 
     stages {
         stage('stage 1') {
             steps {
                 echo 'stage 1'
-                sh 'sleep 1m'
             }
         }
         stage('stage 2') {
