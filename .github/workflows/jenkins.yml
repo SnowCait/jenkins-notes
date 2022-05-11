@@ -7,6 +7,7 @@ on:
       - compose.yaml
       - Dockerfile
       - jenkins_home/**
+      - Jenkinsfile
   workflow_dispatch:
 
 jobs:
