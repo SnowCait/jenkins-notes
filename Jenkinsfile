@@ -24,7 +24,7 @@ pipeline {
             steps {
                 echo 'stage 2'
                 dir('actions-sandbox') {
-                    git branch: 'main'
+                    git branch: 'main',
                         url: 'https://github.com/SnowCait/actions-sandbox/'
                     sh 'ls -la'
                 }
