@@ -15,7 +15,7 @@ pipeline {
         stage('stage 1') {
             steps {
                 echo 'stage 1'
-                echo "PR: ${PR_NUMBER}"
+                echo "PR: ${params.PR_NUMBER}"
             }
         }
         stage('stage 2') {
