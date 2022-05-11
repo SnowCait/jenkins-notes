@@ -50,5 +50,7 @@ jobs:
             
             sleep 5s
           done
-      - run: curl -sS -H "${CRUMB_HEADER}" -b cookie http://localhost:8080/job/job-1/1/api/json | jq '.'
       - run: curl -sS -H "${CRUMB_HEADER}" -b cookie http://localhost:8080/job/job-1/1/logText/progressiveText?start=0
+      - run: |
+          result=$(curl -sS -H "${CRUMB_HEADER}" -b cookie http://localhost:8080/job/job-1/1/api/json | jq '.result')
+          test "$result" = "SUCCRSS"
