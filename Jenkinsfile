@@ -16,6 +16,10 @@ pipeline {
             steps {
                 echo 'stage 1'
                 echo "PR: ${params.PR_NUMBER}"
+                sh 'pwd'
+                sh 'ls -la'
+                git 'https://github.com/SnowCait/jenkins-notes/'
+                sh 'ls -la'
             }
         }
         stage('stage 2') {
