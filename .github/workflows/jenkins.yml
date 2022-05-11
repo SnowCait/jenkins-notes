@@ -34,9 +34,9 @@ jobs:
           echo $crumb
           echo "CRUMB_HEADER=$(echo $crumb | jq -r '.crumbRequestField'): $(echo $crumb | jq -r '.crumb')" >> $GITHUB_ENV
         id: crumb
-      - run: curl -X POST -H "${CRUMB_HEADER}" -b cookie http://localhost:8080/job/job-1/build
-#       - run: |
-#           curl -X POST -H "${CRUMB_HEADER}" -b cookie -d pr_number=177 http://localhost:8080/job/job-1/buildWithParameters
+      # - run: curl -X POST -H "${CRUMB_HEADER}" -b cookie http://localhost:8080/job/job-1/build
+      # https://stackoverflow.com/questions/51638867/how-to-get-the-right-build-number-for-a-build-triggered-in-jenkins-by-remote-api
+      - run: curl -X POST -H "${CRUMB_HEADER}" -b cookie http://localhost:8080/job/job-1/buildWithParameters?pr_number=177 --head
       - run: |
           set -x
           sleep 10s
