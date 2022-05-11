@@ -18,7 +18,7 @@ pipeline {
                 echo "PR: ${params.PR_NUMBER}"
                 sh 'pwd'
                 sh 'ls -la'
-                git 'https://github.com/SnowCait/jenkins-notes/'
+                git 'https://github.com/SnowCait/actions-sandbox/'
                 sh 'ls -la'
             }
         }
