@@ -36,8 +36,7 @@ jobs:
         id: crumb
 #       - run: curl -X POST -H "${CRUMB_HEADER}" -b cookie http://localhost:8080/job/job-1/build
       - run: |
-          curl -X POST -H "${CRUMB_HEADER}" -b cookie http://localhost:8080/job/job-1/buildWithParameters \
-            -d PR_NUMBER=177
+          curl -X POST -H "${CRUMB_HEADER}" -b cookie -d pr_number=177 http://localhost:8080/job/job-1/buildWithParameters
       - run: |
           set -x
           sleep 10s
