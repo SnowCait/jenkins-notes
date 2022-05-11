@@ -18,8 +18,10 @@ pipeline {
                 echo "PR: ${params.PR_NUMBER}"
                 sh 'pwd'
                 sh 'ls -la'
-                git 'https://github.com/SnowCait/actions-sandbox/'
-                sh 'ls -la'
+                dir('actions-sandbox') {
+                    git 'https://github.com/SnowCait/actions-sandbox/'
+                    sh 'ls -la'
+                }
             }
         }
         stage('stage 2') {
