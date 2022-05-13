@@ -2,8 +2,8 @@ services:
   jenkins:
     build:
       context: .
-#       args:
-#         version: 2.319.3-lts-jdk11
+      args:
+        version: ${JENKINS_VERSION}
     ports:
       - 8080:8080
       - 50000:50000
