@@ -3,6 +3,7 @@
 ## General
 - [Administering Jenkins - 日本語 - Jenkins Wiki](https://wiki.jenkins.io/display/JA/Administering+Jenkins)
 - [Jenkinsfile を書く前に知っておくべきこと (機能制約編) - あらしおブログ](https://arasio.hatenablog.com/entry/2016/10/08/220843)
+- [【Unity】ゲーム開発の現場でなぜJenkinsが利用され続けるのか - hikyaru-suzuki’s blog](https://hikyaru-suzuki.hatenablog.jp/entry/2022/12/19/140000)
 
 ### Parallel
 
